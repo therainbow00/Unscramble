@@ -1,0 +1,24 @@
+﻿@model GameModel
+
+@{
+    ViewData["Title"] = "Game Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Scramble</h1>
+
+    <h2>
+        @foreach (var space in Model.wordScrambled) {<span>_ </span>}
+    </h2>
+
+    <h3 class="guess-character">Guess a Character: </h3>
+
+    <form action="Add" method="post">
+        <input type="text" name="guess" placeholder="Enter character"</input>
+        <button type="submit">Enter</button>
+    </form>
+
+    <button class="restart" onclick="location.href = '/Home'">Restart</button>
+</div>
+
